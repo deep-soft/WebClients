@@ -72,6 +72,7 @@ import DisableAccountContainer from '../public/DisableAccountContainer';
 import EmailForwardingContainer, { EmailForwardingRequest } from '../public/EmailForwardingContainer';
 import EmailUnsubscribeContainer from '../public/EmailUnsubscribeContainer';
 import ForgotUsernameContainer from '../public/ForgotUsernameContainer';
+import InboxDesktopFreeTrialEnded from '../public/InboxDesktopFreeTrialEnded';
 import OAuthConfirmForkContainer from '../public/OAuthConfirmForkContainer';
 import RemoveEmailContainer from '../public/RemoveEmailContainer';
 import SwitchAccountContainer from '../public/SwitchAccountContainer';
@@ -728,6 +729,11 @@ const BasePublicApp = ({ onLogin }: Props) => {
                                                         setupVPN={setupVPN}
                                                         paths={paths}
                                                     />
+                                                </UnAuthenticated>
+                                            </Route>
+                                            <Route path="/trial-ended">
+                                                <UnAuthenticated>
+                                                    <InboxDesktopFreeTrialEnded />
                                                 </UnAuthenticated>
                                             </Route>
                                             <Redirect
